@@ -1,0 +1,9 @@
+/node_modules
+/build
+/dist
+.env
+*.log
+*.zip
+yarn.lock
+
+.cache
