@@ -1,17 +1,29 @@
 {
   "name": "bookapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Learning Management System Backend with Express, TypeScript, and Prisma",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:studio": "prisma studio",
+    "prisma:reset": "prisma migrate reset",
+    "prisma:seed": "ts-node prisma/seed.ts",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ProgViki/bookapi.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["lms", "express", "typescript", "prisma", "backend"],
+  "author": "ProgViki",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
