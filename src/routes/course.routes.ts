@@ -2,10 +2,10 @@ import { Router } from 'express';
 import CourseService from '../services/course.service';
 import { authenticate } from '../middleware/auth.middleware';
 
-const router = Router();
+const courseRouter = Router();
 
 // Create a course
-router.post('/', authenticate, async (req: any, res) => {
+courseRouter.post('/', authenticate, async (req: any, res) => {
   try {
     const { title, description } = req.body;
     const instructorId = req.user.id; // from authenticated user
@@ -17,7 +17,7 @@ router.post('/', authenticate, async (req: any, res) => {
 });
 
 // Get all courses
-router.get('/', async (_req, res) => {
+courseRouter.get('/', async (_req, res) => {
   try {
     const courses = await CourseService.getCourses();
     res.json(courses);
@@ -27,7 +27,7 @@ router.get('/', async (_req, res) => {
 });
 
 // Get a course by ID
-router.get('/:id', async (req, res) => {
+courseRouter.get('/:id', async (req, res) => {
   try {
     const id = parseInt(req.params.id, 10);
     const course = await CourseService.getCourseById(id);
@@ -41,7 +41,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // Update a course
-router.put('/:id', authenticate, async (req: any, res) => {
+courseRouter.put('/:id', authenticate, async (req: any, res) => {
   try {
     const id = parseInt(req.params.id, 10);
 
@@ -63,7 +63,7 @@ router.put('/:id', authenticate, async (req: any, res) => {
 });
 
 // Delete a course
-router.delete('/:id', authenticate, async (req: any, res) => {
+courseRouter.delete('/:id', authenticate, async (req: any, res) => {
   try {
     const id = parseInt(req.params.id, 10);
 
@@ -84,7 +84,7 @@ router.delete('/:id', authenticate, async (req: any, res) => {
 });
 
 // Get courses by instructor
-router.get('/instructor/:instructorId', async (req, res) => {
+courseRouter.get('/instructor/:instructorId', async (req, res) => {
   try {
     const instructorId = parseInt(req.params.instructorId, 10);
     const courses = await CourseService.getCoursesByInstructor(instructorId);
@@ -94,4 +94,4 @@ router.get('/instructor/:instructorId', async (req, res) => {
   }
 });
 
-export default router;
+export default courseRouter;
