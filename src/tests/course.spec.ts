@@ -1,6 +1,22 @@
 describe('Course Management', () => {
   let authToken: string;
 
+//   it('should create a new course', () => {
+//     cy.request({
+//       method: 'POST',
+//       url: '/api/courses',
+//       headers: {
+//         Authorization: `Bearer ${authToken}`,
+//       },
+//       body: {
+//         title: 'Test Course',
+//         description: 'This is a test course',
+//         instructor: 'Instructor',
+//         price: 100,
+//       }
+//     })
+//   })
+
   before(() => {
     // Login and get token before running tests
     cy.request('POST', '/api/auth/login', {

@@ -17,7 +17,7 @@
     "resolveJsonModule": true,                        
 
     /* Node.js types */
-    "types": ["node"],                                
+    "types": ["node", "jest", "cypress"],                         
 
     /* Source Map */
     "sourceMap": true                                 

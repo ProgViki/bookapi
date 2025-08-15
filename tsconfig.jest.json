@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest", "node"],
+    "outDir": "./dist-test",
+    // Add these if you're using modern Jest features
+    "lib": ["ES2020", "DOM"],
+    // Enable these if needed for your test files
+    "noImplicitAny": false,
+    "strictNullChecks": true
+  },
+  "include": [
+    "src/**/*",
+    "tests/**/*",
+    "jest.config.ts",
+    "setupTests.ts"
+  ],
+  "exclude": ["node_modules"]
+}

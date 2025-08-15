@@ -1,6 +1,6 @@
 import CourseService from '../services/course.service';
 import prisma from '../utils/prisma';
-import { Course, User } from '@prisma/client';
+// import { Course, User } from '@prisma/client';
 
 // Mock the prisma client
 jest.mock('../utils/prisma', () => ({
